@@ -234,11 +234,11 @@ class Nomisweb:
 
     def get_metadata(self, table_name):
         """Downloads census table metadata.
-    Args:
-      table_name: the (ONS) table name, e.g. KS4402EW
-    Returns:
-      a dictionary containing information about the table contents including categories and category values.
-    """
+        Args:
+            table_name: the (ONS) table name, e.g. KS4402EW
+        Returns:
+            a dictionary containing information about the table contents including categories and category values.
+        """
         # see if already downloaded
 
         if not table_name.startswith("NM_"):
@@ -317,11 +317,11 @@ class Nomisweb:
     # NB category KEYs need to be converted from string to integer for this data to work properly, see convert_code
     def load_metadata(self, table_name):
         """Retrieves cached, or downloads census table metadata. Use this in preference to get_metadata.
-    Args:
-      table_name: the (ONS) table name, e.g. KS4402EW
-    Returns:
-      a dictionary containing information about the table contents including categories and category values.
-    """
+        Args:
+            table_name: the (ONS) table name, e.g. KS4402EW
+        Returns:
+            a dictionary containing information about the table contents including categories and category values.
+        """
         filename = self.cache_dir / (table_name + "_metadata.json")
         # if file not there, get from nomisweb
         if not os.path.isfile(str(filename)):

@@ -28,11 +28,6 @@ class Test(TestCase):
         self.assertTrue(self.api_ew.get_lad_codes("Leeds") == [1946157127])
         self.assertTrue(self.api_ew.get_lad_codes(["Leeds", "Bradford"]) == [1946157127, 1946157124])
 
-    def test_cache_dir_invalid(self):
-        self.assertRaises(PermissionError, Api_EW.Nomisweb, "/home/invalid")
-        self.assertRaises(PermissionError, Api_SC.NRScotland, "/bin")
-        self.assertRaises(PermissionError, Api_NI.NISRA, "/bin/ls")
-
     # This overlaps test_getGeographyFromCodes
     def test_geo_codes_ew(self):
         result = self.api_ew.get_geo_codes([Api_EW.Nomisweb.GeoCodeLookup["EnglandWales"]],
