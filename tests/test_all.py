@@ -17,7 +17,8 @@ import ukcensusapi.Query as Census
 # test methods only run if prefixed with "test"
 class Test(TestCase):
     """ Test harness """
-    cache_dir = "/tmp/UKCensusAPI"
+    # cache_dir = "/tmp/UKCensusAPI" # Not suitable for implementation on Leeds HPC (Arc3)
+    cache_dir = "../cache"
     api_ew = Api_EW.Nomisweb(cache_dir, verbose=True)
     api_sc = Api_SC.NRScotland(cache_dir)
     api_ni = Api_NI.NISRA(cache_dir)
